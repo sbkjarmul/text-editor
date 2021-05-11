@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Text Editor</h1>
+    <div class="tool-panel">
+      <button class="tool-panel__btn">[<span class="tool-panel__btn--bold">B</span>]</button>
+      <button class="tool-panel__btn">[<span class="tool-panel__btn--italic">I</span>]</button>
+      <button class="tool-panel__btn">[<span class="tool-panel__btn--list">ul</span>]</button>
+      <input type="file" id="file-upload" class="tool-panel__input" accept="application/JSON"/>
+      <label for="file-upload" class="tool-panel__button">Upload</label>
+      <button class="tool-panel__button" id="file-save">Save</button>
+    </div>
+    <div contenteditable="true" spellcheck="false" class="text-editor"></div>
+  </div>
+  <script src="./editor.js"></script>
+  <script src="./file.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+@font-face {
+  font-family: perfectDos;
+  src: url('./assets/fonts/PerfectDos.ttf')
+}
+
+@font-face {
+  font-family: modernDos;
+  src: url('./assets/fonts/ModernDos.ttf')
+}
+
+::-moz-selection { 
+  color: #fff;
+  background:#eb2936;
+}
+
+::selection {
+  color: #fff;
+  background: #eb2936;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: perfectDos;
+}
+
+h1 {
+  color: #eb2936;
+  font-size: 48px;
+  margin: 24px;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #edebeb;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-panel {
+  width: 60%;
+  padding: 12px;
+}
+
+.tool-panel__btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.tool-panel__btn:hover,
+.tool-panel__btn.active {
+  color: white;
+  background-color: #eb2936;
+}
+
+.tool-panel__btn--bold,
+.tool-panel__btn--italic,
+.tool-panel__btn--underline {
+  pointer-events: none;
+}
+
+.tool-panel__btn--bold {
+  font-weight: bold;
+}
+
+.tool-panel__btn--italic {
+  font-style: italic;
+}
+
+.tool-panel__btn--underline {
+  text-decoration: underline;
+}
+
+.tool-panel__button {
+  background: transparent;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 2px 32px;
+  font-size: 20px;
+  letter-spacing: -1px;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+.tool-panel__button:hover {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background: rgba(0,0,0,0.1);
+}
+
+.tool-panel__input {
+  display: none;
+}
+
+.text-editor {
+  width: 60%;
+  min-height: 60vh;
+  height: fit-content;
+  padding: 12px;
+  margin-bottom: 48px;
+
+  background-color: #fff;
+  border: 8px double #000;
+
+  font-size: 32px;
+  font-family: modernDos;
+}
+
+.text-editor:focus {
+  outline: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 160px;
+  padding: 24px;
+
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  font-size: 20px;
+  background-color: #9c9c9c;
+}
+
+.modal::before {
+  position: absolute;
+  content: '';
+  top: 20px;
+  left: 20px;
+  transform: translateZ(-1px);
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.modal__button {
+  position: relative;
+  border: none;
+  background:  #edebeb;
+  margin: 0 12px;
+  cursor: pointer;
+  width: 80px;
+  height: 20px;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.modal__button::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 8px;
+  width: calc(100% - 8px);
+  height: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.modal__button::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 80px;
+  width: 8px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.modal__info {
+  font-size: 24px;
+}
+
+.modal__input {
+  background: #edebeb;
+  padding: 4px;
+}
+
+.modal__input:focus {
+  outline: none;
+}
