@@ -22,13 +22,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: perfectDos;
+  font-family: modernDos;
 }
 
 h1 {
   color: #eb2936;
   font-size: 48px;
   margin: 24px;
+  font-family: perfectDos;
 }
 
 .container {
@@ -89,6 +90,7 @@ h1 {
   letter-spacing: -1px;
   cursor: pointer;
   transition: all .1s ease-out;
+  font-family: perfectDos;
 }
 
 .tool-panel__button:hover {
@@ -114,7 +116,6 @@ h1 {
   border: 8px double #000;
 
   font-size: 32px;
-  font-family: modernDos;
 }
 
 .text-editor:focus {
@@ -198,4 +199,34 @@ h1 {
 
 .modal__input:focus {
   outline: none;
+}
+
+@media (max-width: 767.98px) {
+  .text-editor {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  .tool-panel {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .tool-panel__btn,
+  .tool-panel__button {
+    margin: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .tool-panel {
+    flex-wrap: wrap;
+  }
 }

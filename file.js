@@ -78,7 +78,13 @@ const createModal = (infoText, buttonText, modalType) => {
     buttonContainer.appendChild(cancelButton);
 
     buttonEl.addEventListener('click', () => {
-      saveFile(textEditor.textContent, `${fileNameInput.value}.json`, 'text/plain');
+      let fileName = fileNameInput.value;
+      
+      if (fileName === '') {
+        fileName = 'file';
+      }
+
+      saveFile(textEditor.textContent, `${fileName}.json`, 'text/plain');
     });
 
     cancelButton.addEventListener('click', () => {
